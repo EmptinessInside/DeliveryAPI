@@ -8,7 +8,12 @@ use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
-
+    /**
+     * Добавление нового пользователя
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(UserRequest $request){
 
         $user = new User();
@@ -22,6 +27,12 @@ class UserController extends Controller
 
     }
 
+    /**
+     * Показ одного пользователя
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function show(int $id){
 
         $user = User::select('name', 'last_name', 'accept_mailing')->find($id);
@@ -29,6 +40,13 @@ class UserController extends Controller
 
     }
 
+    /**
+     * Редактирование пользователя
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function update(UserRequest $request, int $id){
 
         $userHelper = new UserHelper();
