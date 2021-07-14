@@ -16,9 +16,9 @@ class CreateDeliveryAddressesTable extends Migration
         Schema::create('delivery_addresses', function (Blueprint $table) {
             $table->id();
             $table->string('region', 200);
-            $table->string('locality', 60);
-            $table->string('street', 60);
-            $table->integer('house');
+            $table->string('locality', 200);
+            $table->string('street', 200);
+            $table->string('house', 10);
             $table->integer('index');
             $table->timestamps();
         });
