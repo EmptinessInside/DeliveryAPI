@@ -26,7 +26,7 @@ class UserRequest extends FormRequest
         $rules = [
             'name' => 'required|string|max:50',
             'last_name' => 'required|string|max:50',
-            'accept_mailing' => 'boolean',
+            'accept_mailing' => 'required|boolean',
         ];
 
         switch ($this->getMethod()){
