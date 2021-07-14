@@ -28,7 +28,8 @@ class DeliveryAddressRequest extends FormRequest
             'locality' => 'required|string|max:200',
             'street' => 'required|string|max:200',
             'house' => 'required|string|max:10',
-            'index' => 'required|integer|min:100000|max:999999'
+            'index' => 'required|integer|min:100000|max:999999',
+            'user_id' => 'required|integer|exists:users,id'
         ];
     }
 
