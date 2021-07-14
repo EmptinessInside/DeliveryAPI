@@ -33,4 +33,11 @@ class DeliveryAddressRequest extends FormRequest
         ];
     }
 
+    public function messages()
+    {
+        return [
+            'user_id.required' => 'Не задан пользователь'
+        ];
+    }
+
 }
