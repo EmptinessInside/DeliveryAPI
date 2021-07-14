@@ -20,6 +20,7 @@ class CreateDeliveryAddressesTable extends Migration
             $table->string('street', 200);
             $table->string('house', 10);
             $table->integer('index');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
