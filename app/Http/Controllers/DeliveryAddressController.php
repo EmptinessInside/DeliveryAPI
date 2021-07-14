@@ -54,6 +54,16 @@ class DeliveryAddressController extends Controller
      */
     public function destroy(int $id)
     {
-        return response()->json(DeliveryAddress::where('id', $id)->delete());
+        $response_status = 200;
+        $message = 'Запись была удалена.';
+
+        $status = DeliveryAddress::where('id', $id)->delete();
+
+        if(!$status){
+            $message = 'Указанная запись не существует.';
+            $response_status = 422;
+        }
+
+        return response($message,$response_status);
     }
 }
