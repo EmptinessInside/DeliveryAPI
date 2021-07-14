@@ -20,9 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/create_user', [\App\Http\Controllers\UserController::class,'store']);
-Route::put('/edit_user/{id}', [\App\Http\Controllers\UserController::class, 'update']);
-Route::get('/get_user/{id}', [\App\Http\Controllers\UserController::class, 'show']);
+Route::resource('/user', '\App\Http\Controllers\UserController')->only(
+    'store', 'show', 'update'
+);
 
 Route::resource('/delivery_address', '\App\Http\Controllers\DeliveryAddressController')->only(
   'store', 'update', 'destroy'
