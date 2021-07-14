@@ -33,5 +33,4 @@ class DeliveryAddressRequest extends FormRequest
         ];
     }
 
-    //TODO Кастомные сообщения
 }

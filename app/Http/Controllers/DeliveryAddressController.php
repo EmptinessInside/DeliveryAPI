@@ -5,13 +5,12 @@ namespace App\Http\Controllers;
 use App\Helpers\DeliveryAddressHelper;
 use App\Http\Requests\DeliveryAddressRequest;
 use App\Models\DeliveryAddress;
-use Illuminate\Http\Request;
 
 class DeliveryAddressController extends Controller
 {
 
     /**
-     * Store a newly created resource in storage.
+     * Добавление нового адреса доставки для пользователя
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -29,7 +28,7 @@ class DeliveryAddressController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Обновление адреса доставки
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -48,7 +47,7 @@ class DeliveryAddressController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Удаление адреса доставки
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

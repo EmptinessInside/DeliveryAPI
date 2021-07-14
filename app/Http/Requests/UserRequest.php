@@ -29,8 +29,6 @@ class UserRequest extends FormRequest
             'accept_mailing' => 'boolean',
         ];
 
-        //TODO переключатель запросов с компановщиком правил (доработать)
-
         switch ($this->getMethod()){
             //Создание пользователя
             CASE 'POST' :
@@ -39,11 +37,9 @@ class UserRequest extends FormRequest
                         'password' => 'required|string|min:6|max:200'
                     ];
             //Редактирование пользователя
-            CASE 'PUT' :
+            CASE 'PUT' || 'PATCH' :
                 return $rules;
         }
     }
-
-    // TODO сообщения валидации
 
 }
