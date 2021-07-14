@@ -36,7 +36,7 @@ class UserController extends Controller
     public function show(int $id){
 
         $user = User::select('name', 'last_name', 'accept_mailing')->find($id);
-        return !empty($user) ? $user : null;
+        return response()->json(!empty($user) ? $user : null);
 
     }
 
