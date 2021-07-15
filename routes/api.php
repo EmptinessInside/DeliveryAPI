@@ -16,14 +16,10 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::resource('/user', '\App\Http\Controllers\UserController')->only(
     'store', 'show', 'update'
 );
 
 Route::resource('/delivery_address', '\App\Http\Controllers\DeliveryAddressController')->only(
-  'store', 'update', 'destroy'
+    'store', 'update', 'destroy'
 );
