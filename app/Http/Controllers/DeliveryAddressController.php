@@ -36,7 +36,11 @@ class DeliveryAddressController extends Controller
      */
     public function update(DeliveryAddressRequest $request, int $id)
     {
-        $deliveryAddress = DeliveryAddress::findOrFail($id);
+        $deliveryAddress = DeliveryAddress::find($id);
+
+        if(empty($deliveryAddress))
+            return response('Указанная запись не найдена.', 404);
+
         $deliveryAddressHelper = new DeliveryAddressHelper();
 
         $deliveryAddress = $deliveryAddressHelper->secureData($request, $deliveryAddress);
