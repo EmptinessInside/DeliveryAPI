@@ -51,7 +51,11 @@ class UserController extends Controller
 
         $userHelper = new UserHelper();
 
-        $user = User::findOrFail($id);
+        $user = User::find($id);
+
+        if(empty($user))
+            return response('Указанная запись не найдена.', 404);
+
         $user = $userHelper->secureUpdatableData($request, $user);
 
         $user->save();
